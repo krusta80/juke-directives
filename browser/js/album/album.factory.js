@@ -6,7 +6,7 @@ juke.factory('AlbumFactory', function ($http, SongFactory) {
 
   AlbumFactory.fetchAll = function () {
     return $http.get('/api/albums')
-    .then(function (response) { return response.data; })
+    .then(function (response) { console.log("fetching all albums"); return response.data; })
     .then(function (albums) { return albums.map(AlbumFactory.convert); });
   };
 
