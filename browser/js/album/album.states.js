@@ -9,10 +9,10 @@ juke.config(function ($stateProvider) {
 
   $stateProvider.state('album', {
     url: '/albums/:albumId',
-    templateUrl: '/js/album/templates/album.html',
+    template: '<one-album albumId="album._id"></one-album>',
     controller: 'AlbumCtrl',
     resolve: {
-      theAlbum: function (AlbumFactory, $stateParams) {
+      album: function (AlbumFactory, $stateParams) {
         return AlbumFactory.fetchById($stateParams.albumId);
       }
     }
